@@ -10,7 +10,7 @@
 /* header */
 #header{overflow:visible; position:fixed; top:0; left:0; width:100%;height:146px;z-index:148;box-sizing:border-box;transition:all .5s ease-in-out;}
 #header.on{background:#fff;}
-#header.fixed{top:-90px;width:100% !important;z-index: 500;box-shadow: 6px 6px 8px 0px rgba(0, 0, 0, 0.1);animation:fadein .5s;background:rgba(255,255,255,.98);}
+#header.fixed{top:-132px;width:100% !important;z-index: 500;box-shadow: 6px 6px 8px 0px rgba(0, 0, 0, 0.1);animation:fadein .5s;background:rgba(255,255,255,.98);}
 
 #header.main_header{color:#fff;}
 #header.main_header .hd_top .logo_wp.logo_bk{display:none;}
@@ -20,15 +20,22 @@
 #header.main_header #gnb .sitem_map{border-color:#fff;}
 #header.main_header #gnb .sitem_map span{background-color:#fff;}
 
+/* hd_menu_wp */
+.hd_menu_wp {height: 42px;border-bottom: 1px solid rgba(255, 255, 255, .5);font-size: .875rem;}
+.hws_link li a{display:block;position:relative;height:42px;line-height:42px;padding:0 14px 0 13px;}
+.hws_link li:not(:last-child) a:before{content:'';position:absolute;top:50%;right:0;margin-top:-6px;width:1px;height:12px;background:rgba(255,255,255,.5);}
+.hws_link li:first-child a {padding-left: 0;}
+#header.on .hd_menu_wp {border-bottom: 1px solid rgba(0, 0, 0, .1);}
+#header.on .hws_link li:not(:last-child) a:before{background:rgba(0,0,0,.1);}
+
+
+
 /* header */
 .hd_top {display:flex;align-items:center;justify-content: space-between;height:90px;}
 .hd_top .h_logo h1{z-index:20;}
-.hd_top .logo_wp{position:relative;width:240px;max-width:100%;height:40px;display:flex;align-items:center;}
-.hd_top .logo_wp > img{position:absolute;opacity:0;animation: change-img-anim 20s infinite;width:100%;}
-.hd_top .logo_wp > img:first-child {animation-delay: 0s;}
-.hd_top .logo_wp > img:last-child {	animation-delay: 10s;}
+.hd_top .logo_wp{position:relative;width:100px;max-width:100%;height:40px;display:flex;align-items:center;}
+.hd_top .logo_wp > img{position:absolute;width:100%;}
 .hd_top .logo_wp.logo_w{display:none;}
-@keyframes change-img-anim {0%{ opacity: 0;}	10%{ opacity: 1;}	40%{ opacity: 1;} 60%{ opacity: 0;}  100%{ opacity: 0;}}
 .hd_top .tnb ul > li{position:relative;}
 .hd_top .tnb ul > li:not(:first-child){padding-left:12px;margin-left:12px;}
 .hd_top .tnb ul > li:not(:first-child):before{content:'';position:absolute;top:50%;left:0;margin-top:-8px;width:1px;height:16px;background:#ddd;}
