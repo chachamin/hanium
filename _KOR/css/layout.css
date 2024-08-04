@@ -49,12 +49,10 @@
 #gnb{position:relative;background:#ebebeb;border:solid #dddddd;border-width:1px 0;height:56px;}
 #gnb .inner{padding-right:60px;}
 #gnb .inner > ul{position:absolute;margin:0px auto ;height:56px;width:calc(100% - 40px);z-index:130;}
-#gnb .inner > ul > li{position:absolute;left:-20px;width:16.6%;}
-#gnb .inner > ul > li:nth-child(2){left:calc(16.6% - 20px);}
-#gnb .inner > ul > li:nth-child(3){left:calc(33.2% - 20px);}
-#gnb .inner > ul > li:nth-child(4){left:calc(49.8% - 20px);}
-#gnb .inner > ul > li:nth-child(5){left:calc(66.4% - 20px);}
-#gnb .inner > ul > li:nth-child(6){left:calc(83% - 20px);}
+#gnb .inner > ul > li{position:absolute;left:-20px;width:25%;}
+#gnb .inner > ul > li:nth-child(2){left:calc(25% - 20px);}
+#gnb .inner > ul > li:nth-child(3){left:calc(50% - 20px);}
+#gnb .inner > ul > li:nth-child(4){left:calc(75% - 20px);}
 #gnb .inner > ul > li > a{position:relative;display:block;font-size:1.25em;font-weight:700;padding:12px 16px;height:56px;box-sizing:border-box;}
 #gnb .inner > ul > li:hover > a,#gnb .inner > ul > li:focus > a{background:#d10028;color:#fff;transition: all .3s ease-in-out;}
 #gnb .gnb_dep2{display:none;position:relative;background:#fff;text-align:left;z-index:102;padding-top:24px;margin-top:-1px;min-height:390px;opacity:0;transition:all .3s ease;}
