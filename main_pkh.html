@@ -101,7 +101,7 @@
                             <div class="txt_con">
                                 <div class="top_txt">
                                     <p class="h4 fw_2">전국 최대 규모를 자랑하는</p>
-                                    <p><span class="h2 fw_2">화순파크골프장</span></p>
+                                    <p><span class="h2 fw_4">화순파크골프장</span></p>
                                 </div>
                                 <div class="mid_txt mt40">
                                     <p class="stit_2">화순군 청풍면 일원에 추진 중인 화순 파크골프장은</p>
@@ -125,10 +125,10 @@
                         <div class="sec_tit_wp">
                             <div class="h4 fw_2">이용안내</div>
                             <div class="btn_box">
-                                <a href="#none" class="btn">이용신청<span class="ico"></span></a>
+                                <a href="#none" class="btn bg_green2">이용신청<span class="ico"></span></a>
                             </div>
                         </div>
-                        <div class="sec_wp p_r">
+                        <div class="radi_box p_r mt30">
                             <div class="con_box con01">
                                 <div class="con_left_box">
                                     <p class="h6 fw_2">운영시간</p>
@@ -158,7 +158,7 @@
                                 <div class="con_right_box">
                                     <div class="in_box dp_flex">
                                         <div class="table_wp">
-                                            <table class="basic_tb th_green">
+                                            <table class="basic_tb th_green t_a_c">
                                                 <caption>화순파크골프장 이용요금</caption>
                                                 <thead>
                                                     <tr>
@@ -213,13 +213,28 @@
                         <div class="sec_tit_wp">
                             <div class="h4 fw_2">오시는길</div>
                             <div class="btn_box">
-                                <a href="#none" class="btn">지도 크게보기<span class="ico"></span></a>
-                                <a href="#none" class="btn">길찾기<span class="ico"></span></a>
+                                <a href="#none" class="btn bg_blue_d3">지도 크게보기<span class="ico"></span></a>
+                                <a href="#none" class="btn bg_green2">길찾기<span class="ico"></span></a>
                             </div>
                         </div>
                     </div>
-                    <div class="sec_wp">
-                        <div class="map"></div>
+                    <div class="map_wp mt30">
+                        <div class="map">
+                            <!-- 1. 지도 노드 -->
+                            <div id="daumRoughmapContainer1722907211850" class="root_daum_roughmap root_daum_roughmap_landing" style="width: 100%;"></div>
+
+                            <!--2. 설치 스크립트-->
+                            <script charset="UTF-8" class="daum_roughmap_loader_script" src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
+
+                            <!-- 3. 실행 스크립트 -->
+                            <script charset="UTF-8">
+                                new daum.roughmap.Lander({
+                                    "timestamp" : "1722907211850",
+                                    "key" : "2k9px",
+                                    "mapHeight" : "500"
+                                }).render();
+                            </script>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -256,19 +271,21 @@
             <!-- // #footer -->
         </div>
         <div class="global_quick">
-            <div class="q_links">
-                <a class="q_link q_link1" href="#none" target="_blank" title="클릭시 새창열림">
+            <div class="q_top">
+                <a class="q_link q_link0" href="main.html">
                     <span class="ico"></span>
-                    <span class="txt">하니움문화스포츠센터</span>
-                </a>
-                <a class="q_link q_link2" href="#none" target="_blank" title="클릭시 새창열림">
-                    <span class="ico"></span>
-                    <span class="txt">능주파크골프장</span>
+                    <span class="txt">하니움<br>문화스포츠센터</span>
                 </a>
             </div>
             <!-- // q_top -->
-
             <div class="q_links">
+                <a class="q_link q_link1" href="#none" target="_blank" title="클릭시 새창열림">
+                    <span class="ico"></span>
+                    <span class="txt">능주파크골프</span>
+                </a>
+            </div>
+            <!-- // q_top -->
+            <div class="to_top">
                 <a href="#header" class="top" title="상단으로">TOP <span class="ico"></span></a>
             </div>
             <!-- // loca_nav -->

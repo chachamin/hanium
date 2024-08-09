@@ -2,8 +2,8 @@
 @import url("font.css");
 /* reset */
 html {width:100%;}
-body {margin:0; padding:0; background:#fff; overflow-y:scroll; height:100%; width:100%;	word-break:keep-all;}
-body {font-family:"Pretendard", "맑은고딕","Malgun Gothic", "AppleGothicNeoSD", "Apple SD 산돌고딕 Neo", "sans-serif"; -webkit-font-smoothing: antialiased; font-size:17px; font-weight:500; letter-spacing:0px; color:#0A0D14; line-height:1.5;}
+body {margin:0; padding:0; background:#fff; overflow-y:scroll; height:100%; width:100%;word-break:keep-all;}
+body {font-family:"Pretendard", "맑은고딕","Malgun Gothic", "AppleGothicNeoSD", "Apple SD 산돌고딕 Neo", "sans-serif"; -webkit-font-smoothing: antialiased; font-size:16px; font-weight:500; letter-spacing:0px; color:#0A0D14; line-height:1.5;}
 * {color:inherit; font-family:inherit; font-size:inherit; font-weight:inherit; letter-spacing:inherit; line-height:inherit;box-sizing: border-box;}
 
 article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {display:block;}
@@ -19,7 +19,7 @@ address, caption, pre, em, i {font-style:normal;}
 
 table{width:100%;border-collapse:collapse;border-spacing:0;}
 table caption,legend{height:0;width:0;overflow:hidden;font-size:0;}
-table, caption, tbody, tfoot, thead, tr, th, td {background:transparent;font-siez:100%;}
+table, caption, tbody, tfoot, thead, tr, th, td {background:transparent;font-size:100%;}
 th,td{vertical-align:middle}
 
 blockquote, q {quotes:none;}
@@ -354,34 +354,6 @@ ul.ulfl > li{float:left}
 .sitemap_dep3 > li > a{padding-left:11px;position:relative;font-size:1rem;color:#555;}
 .sitemap_dep3 > li > a:before{content:'';position:absolute;left:0;top:11px;width:4px;height:1px;background:#525866;}
 
-
-/* 만족도 조사 */
-#pg_satisfaction{margin-top:72px;border:4px solid #E8ECF1;border-radius:16px;overflow:hidden;}
-#pg_satisfaction .u_s_tit{padding:24px 32px 16px;}
-#pg_satisfaction .radio_gp_wp{padding:0px 32px 16px;}
-#pg_satisfaction .radio_gp_wp ul{display:flex;}
-#pg_satisfaction .radio_gp_wp li{position:relative;display:flex;align-items:center;}
-#pg_satisfaction .radio_gp_wp ul li + li{margin-left:12px;}
-#pg_satisfaction .radio_gp_wp input[type="radio"]{position:relative;width:25px; height:18px; border:none; padding:0; margin:0; background:none;  appearance: none; -webkit-appearance:none; }
-#pg_satisfaction .radio_gp_wp input[type="radio"]:before{content:'';width:20px;height:20px;display:inline-block; background-color:#fff; border:6px solid #E2E4E9;border-radius:50%; box-sizing:border-box; position:absolute;left:0;top:0;transition:all .2s ease-in-out;}
-#pg_satisfaction .radio_gp_wp input[type="radio"]:checked:before{border:6px solid #375DFB;}
-#pg_satisfaction .radio_gp_wp label{display: inline-flex;align-items: center;}
-#pg_satisfaction .radio_gp_wp input:checked + label{font-weight:700;}
-/*#pg_satisfaction .radio_gp_wp label:before{content:'';width:34px;height:34px;margin-right:8px;display:inline-block;background:url('/_SPC/img/ico_score.png') -8px -47px no-repeat #fff;transition:all .2s ease-in-out;}*/
-#pg_satisfaction .radio_gp_wp .q_2 label:before{background-position:-54px -47px;}
-#pg_satisfaction .radio_gp_wp .q_3 label:before{background-position:-102px -47px;}
-#pg_satisfaction .radio_gp_wp .q_4 label:before{background-position:-150px -47px;}
-#pg_satisfaction .radio_gp_wp .q_5 label:before{background-position:-198px -47px;}
-#pg_satisfaction .radio_gp_wp .q_1 input:checked + label:before{background-position:-8px 0px;}
-#pg_satisfaction .radio_gp_wp .q_2 input:checked + label:before{background-position:-54px 0px;}
-#pg_satisfaction .radio_gp_wp .q_3 input:checked + label:before{background-position:-102px 0px;}
-#pg_satisfaction .radio_gp_wp .q_4 input:checked + label:before{background-position:-150px 0px;}
-#pg_satisfaction .radio_gp_wp .q_5 input:checked + label:before{background-position:-198px 0px;}
-
-#pg_satisfaction .radio_gp_wp input:checked + label:before{}
-#pg_satisfaction .user_opinion{position:relative;display:flex;padding:24px 32px 16px;background:#F3F5F8}
-#pg_satisfaction .user_opinion textarea{height:49px;width:calc(100% - 100px);margin-right:8px;}
-#pg_satisfaction .user_opinion .btn{width:92px;}
 
 /* 애니메이션 */
 a{transition:all .3s ease; -webkit-transition:all .2s ease; -ms-transition:all .2s ease; -moz-transition:all .2s ease; -o-transition:all .2s ease;}

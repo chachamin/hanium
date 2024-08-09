@@ -3,7 +3,7 @@
 /* reset */
 html {width:100%;}
 body {margin:0; padding:0; background:#fff; overflow-y:scroll; height:100%; width:100%;	word-break:keep-all;}
-body {font-family:"Pretendard", "맑은고딕","Malgun Gothic", "AppleGothicNeoSD", "Apple SD 산돌고딕 Neo", "sans-serif"; -webkit-font-smoothing: antialiased; font-size:17px; font-weight:500; letter-spacing:0px; color:#0A0D14; line-height:1.5;}
+body {font-family:"Pretendard", "맑은고딕","Malgun Gothic", "AppleGothicNeoSD", "Apple SD 산돌고딕 Neo", "sans-serif"; -webkit-font-smoothing: antialiased; font-size:16px; font-weight:500; letter-spacing:0px; color:#0A0D14; line-height:1.5;}
 * {color:inherit; font-family:inherit; font-size:inherit; font-weight:inherit; letter-spacing:inherit; line-height:inherit;box-sizing: border-box;}
 
 article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {display:block;}
@@ -292,9 +292,11 @@ ul.ulfl > li{float:left}
 .bg_disable{background-color:#eee !important;color:#888  !important;cursor: unset !important;}
 .bg_dgray{background-color:#595757 !important; color:#fff !important}
 .bg_green{background-color:#2d9f75 !important;color:#fff !important}
+.bg_green2{background-color:#009944 !important;color:#fff !important}
 .bg_mint{background-color:#1F87AD !important;color:#fff !important}
 .bg_blue{background-color:#3D52A7 !important;color:#fff !important}
 .bg_blue_d2{background-color:#0F31B7 !important;color:#fff !important}
+.bg_blue_d3{background-color:#005a99 !important;color:#fff !important}
 .bg_navy{background-color:#194185 !important;color:#fff !important}
 .bg_orange{background-color:#FB6514 !important;color:#fff !important}
 .bg_orange_d{background-color:#C76A23 !important;color:#fff !important}
@@ -339,53 +341,13 @@ ul.ulfl > li{float:left}
 .loca_nav a:hover{background:#000;color:#fff;opacity:1}
 .loca_nav a:hover:before{border-color:#fff}
 
-/* 사이트맵 */
-.sitemap_list{display:flex;flex-wrap:wrap;margin:-20px;}
-.sitemap_list a:hover{font-weight:700;}
-.sitemap_list > li{width:calc((100% - 160px) / 4);margin:20px;margin-bottom:48px;}
-.sitemap_list > li > a{position:relative;display:block;width:100%;font-size:1.75rem;line-height:1.95rem;font-weight:700;padding:22px 2px;border-bottom:1px solid #666;color:#B70F15;}
-.sitemap_list > li > a:hover{color:#D10028;}
-.sitemap_dep2 > li > a{position:relative;display:block;padding:14px 2px;padding-left:14px;font-size:1.25rem;border-bottom:1px solid #ededed;font-weight:600;color:#333;}
-.sitemap_dep2 > li > a:before{content:'';position:absolute;left:1px;top:50%;margin-top:-2px;width:4px;height:4px;background:#525866;border-radius:50%}
-.sitemap_dep2  a:hover{color:#B70F15;}
-.sitemap_dep3{position:relative;background:#f8f8f8;margin:16px 0;padding:16px;border-radius:8px;}
-.sitemap_dep3:before{content:'';position:absolute;left:0;bottom:-16px;width:100%;height:1px;background:#ededed;}
-.sitemap_dep3 > li:not(:first-child){margin-top:13px;}
-.sitemap_dep3 > li > a{padding-left:11px;position:relative;font-size:1rem;color:#555;}
-.sitemap_dep3 > li > a:before{content:'';position:absolute;left:0;top:11px;width:4px;height:1px;background:#525866;}
-
-
-/* 만족도 조사 */
-#pg_satisfaction{margin-top:72px;border:4px solid #E8ECF1;border-radius:16px;overflow:hidden;}
-#pg_satisfaction .u_s_tit{padding:24px 32px 16px;}
-#pg_satisfaction .radio_gp_wp{padding:0px 32px 16px;}
-#pg_satisfaction .radio_gp_wp ul{display:flex;}
-#pg_satisfaction .radio_gp_wp li{position:relative;display:flex;align-items:center;}
-#pg_satisfaction .radio_gp_wp ul li + li{margin-left:12px;}
-#pg_satisfaction .radio_gp_wp input[type="radio"]{position:relative;width:25px; height:18px; border:none; padding:0; margin:0; background:none;  appearance: none; -webkit-appearance:none; }
-#pg_satisfaction .radio_gp_wp input[type="radio"]:before{content:'';width:20px;height:20px;display:inline-block; background-color:#fff; border:6px solid #E2E4E9;border-radius:50%; box-sizing:border-box; position:absolute;left:0;top:0;transition:all .2s ease-in-out;}
-#pg_satisfaction .radio_gp_wp input[type="radio"]:checked:before{border:6px solid #375DFB;}
-#pg_satisfaction .radio_gp_wp label{display: inline-flex;align-items: center;}
-#pg_satisfaction .radio_gp_wp input:checked + label{font-weight:700;}
-/*#pg_satisfaction .radio_gp_wp label:before{content:'';width:34px;height:34px;margin-right:8px;display:inline-block;background:url('/_SPC/img/ico_score.png') -8px -47px no-repeat #fff;transition:all .2s ease-in-out;}*/
-#pg_satisfaction .radio_gp_wp .q_2 label:before{background-position:-54px -47px;}
-#pg_satisfaction .radio_gp_wp .q_3 label:before{background-position:-102px -47px;}
-#pg_satisfaction .radio_gp_wp .q_4 label:before{background-position:-150px -47px;}
-#pg_satisfaction .radio_gp_wp .q_5 label:before{background-position:-198px -47px;}
-#pg_satisfaction .radio_gp_wp .q_1 input:checked + label:before{background-position:-8px 0px;}
-#pg_satisfaction .radio_gp_wp .q_2 input:checked + label:before{background-position:-54px 0px;}
-#pg_satisfaction .radio_gp_wp .q_3 input:checked + label:before{background-position:-102px 0px;}
-#pg_satisfaction .radio_gp_wp .q_4 input:checked + label:before{background-position:-150px 0px;}
-#pg_satisfaction .radio_gp_wp .q_5 input:checked + label:before{background-position:-198px 0px;}
-
-#pg_satisfaction .radio_gp_wp input:checked + label:before{}
-#pg_satisfaction .user_opinion{position:relative;display:flex;padding:24px 32px 16px;background:#F3F5F8}
-#pg_satisfaction .user_opinion textarea{height:49px;width:calc(100% - 100px);margin-right:8px;}
-#pg_satisfaction .user_opinion .btn{width:92px;}
 
 /*add_dot*/
 .add_dot > li {padding-left: 15px;position: relative;}
 .add_dot > li::after {content: '';display: block;width: 4px;height: 4px;border-radius: 50%;background: #6d6d6d;position: absolute;top: 8px;left: 0;}
+.add_dot.tp_triangle > li::after {width: 0px; height: 0px;border-left: 6px solid #009944;border-top: 4px solid transparent;border-bottom: 4px solid transparent;border-radius: 0;background: transparent;}
+
+
 
 /* 애니메이션 */
 a{transition:all .3s ease; -webkit-transition:all .2s ease; -ms-transition:all .2s ease; -moz-transition:all .2s ease; -o-transition:all .2s ease;}

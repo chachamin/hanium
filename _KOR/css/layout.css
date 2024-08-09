@@ -296,3 +296,20 @@ html.active {
 .layerpopup .popup_img a{display:block;}
 .layerpopup .bottom{position: relative;width:100%;padding:8px 16px;background:#fff;font-size:.875rem;z-index: 5;}
 .layerpopup .bottom form{display:flex;flex-wrap:wrap;align-items: center;justify-content: space-between;}
+
+
+/* intro */
+.intro_wp {width: 100%;height: 100vh;flex-wrap: wrap;}
+.intro_wp > div {width: 50%;height: 100%;position: relative;}
+.intro_wp .intro_link {width: 100%;height: 100%;display: block;position: relative;}
+.intro_wp > div .intro_link::after {content: '';display: block;width: 100%;height: 430px;background-position: center bottom;background-repeat: no-repeat;position: absolute;bottom: 0;left: 50%;transform: translateX(-50%);}
+.intro_wp > .intro_ha .intro_link{background-image: url(../img/intro_bg2_ha.png);background-position: center;background-repeat: no-repeat;}
+.intro_wp > .intro_ha .intro_link::after {background-image: url(../img/intro_bg3_ha.png);background-size: 100%;}
+.intro_wp > .intro_golf .intro_link {background-image: url(../img/intro_bg2_pkg.png);background-position: center;background-repeat: no-repeat;}
+.intro_wp > .intro_golf .intro_link::after {background-image: url(../img/intro_bg3_pkg.png);background-size: 100%;}
+.intro_wp .in_box {width:100%;height: 100%; display: flex;justify-content: center;flex-direction: column;align-items: center;}
+.intro_wp .intro_ha {background:url(../img/intro_bg_ha.png) repeat-x left top;}
+.intro_wp .intro_golf {background:url(../img/intro_bg_pkg.png) repeat-x left top;}
+.intro_wp .tit {font-size: 2.5rem;font-weight: 700;margin-bottom:4.5rem;}
+.intro_wp .intro_ha .tit {color: #14217f;}
+.intro_wp .intro_golf .tit {color: #65842c;}

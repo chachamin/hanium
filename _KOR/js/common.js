@@ -219,16 +219,16 @@ $(document).ready(function(){
 	});
 
 // -------------------------- 메인 탭 --------------------------
-	$('.board_tabs > li > a.tablink').on('focus click' ,function(){
-		$(this).addClass('active');		
-		$(this).parent('li').addClass('active');		
-		$(this).parent('li').siblings('li').removeClass('active');
-		$(this).parent('li').siblings('li').find('a').removeClass('active');		
-		$(this).parent('li').find('div').css('display','block');
-		$(this).parent('li').siblings('li').find('div').css('display','none');
-		$(this).parent('li').find('a.more').css('display','block');
-		$(this).parent('li').siblings('li').find('a.more').css('display','none');
-	});
+$('.board_tabs > li > a.tablink').on('focus click' ,function(){
+	$(this).addClass('active');		
+	$(this).parent('li').addClass('active');		
+	$(this).parent('li').siblings('li').removeClass('active');
+	$(this).parent('li').siblings('li').find('a').removeClass('active');		
+	$(this).parent('li').find('div').css('display','block');
+	$(this).parent('li').siblings('li').find('div').css('display','none');
+	$(this).parent('li').find('a.more').css('display','inline-flex');
+	$(this).parent('li').siblings('li').find('a.more').css('display','none');
+});
 
 // -------------------------- 전체메뉴 클릭시 html --------------------------
 	$(".open_all_nav").click(function(){

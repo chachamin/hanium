@@ -7,18 +7,18 @@
         <meta name="description" content="능주파크골프장" />
         <meta name="subject" content="능주파크골프장" />
         <meta name="title" content="능주파크골프장" />
-        <link rel="shortcut icon" type="image/x-icon" href="/_KOR/img/favicon.ico" />
-        <link rel="apple-touch-icon-precomposed" href="/_KOR/img/favi_152.png" />
-        <link rel="stylesheet" type="text/css" href="/_KOR/css/common.css" />
-        <link rel="stylesheet" type="text/css" href="/_KOR/css/slick.css" />
-        <link rel="stylesheet" type="text/css" href="/_KOR/css/layout.css" />
+        <link rel="shortcut icon" type="image/x-icon" href="/_pkGolf/img/favicon.ico" />
+        <link rel="apple-touch-icon-precomposed" href="/_pkGolf/img/favi_152.png" />
+        <link rel="stylesheet" type="text/css" href="/_pkGolf/css/common.css" />
+        <link rel="stylesheet" type="text/css" href="/_pkGolf/css/slick.css" />
+        <link rel="stylesheet" type="text/css" href="/_pkGolf/css/layout.css" />
         <script src="/js/jquery.min.js"></script>
         <script src="/js/slick.js"></script>
-        <script src="/_KOR/js/common.js"></script>
+        <script src="/_pkGolf/js/common.js"></script>
         <script src="/js/main.js"></script>
         <title>능주파크골프장</title>
-        <link rel="stylesheet" type="text/css" href="/_KOR/css/main.css" />
-        <link rel="stylesheet" type="text/css" href="/_KOR/css/rspnsv.css" />
+        <link rel="stylesheet" type="text/css" href="/_pkGolf/css/main.css" />
+        <link rel="stylesheet" type="text/css" href="/_pkGolf/css/rspnsv.css" />
     </head>
 
     <body>
@@ -101,7 +101,7 @@
                             <div class="txt_con">
                                 <div class="top_txt">
                                     <p class="h4 fw_2">지석강과 연주산의 푸르름을 함께 즐길 수 있는</p>
-                                    <p class="h2 fw_2">능주 파크골프장</p>
+                                    <p><span class="h2 fw_4">능주 파크골프장</span></p>
                                 </div>
                                 <div class="mid_txt mt40">
                                     <p class="stit_2">지석강변에 위치한 능주 파크골프장은 총 18홀로 이루어져 있으며,</p>
@@ -127,7 +127,7 @@
                             <div class="con_box con01">
                                 <div class="ico_box">
                                     <div class="ico"></div>
-                                    <div class="txt">
+                                    <div class="con">
                                         <div class="h6 fw_2">이용방법</div>
                                         <ul class="add_dot mt20">
                                             <li>현장접수(선착순)</li>
@@ -139,7 +139,7 @@
                             <div class="con_box con02">
                                 <div class="ico_box">
                                     <div class="ico"></div>
-                                    <div class="txt">
+                                    <div class="con">
                                         <div class="h6 fw_2">운영시간</div>
                                         <ul class="add_dot mt20">
                                             <li>평시 08:00 ~ 18:00 / 하계(6 ~ 8월) 07:00 ~ 09:00</li>
@@ -152,11 +152,11 @@
                             <div class="con_box con03">
                                 <div class="ico_box">
                                     <div class="ico"></div>
-                                    <div class="txt">
+                                    <div class="con">
                                         <div class="h6 fw_2">이용요금</div>
-                                        <div class="in_box">
+                                        <div class="in_box mt20">
                                             <div class="table_wp">
-                                                <table class="basic_tb th_green">
+                                                <table class="basic_tb th_green t_a_c">
                                                     <caption>능주파크골프장 이용요금</caption>
                                                     <thead>
                                                         <tr>
@@ -187,7 +187,7 @@
                                                     <li>카드, 온라인 결제(현금, 계좌이체 불가)</li>
                                                 </ul>
                                                 <div class="btn_box">
-                                                    <a href="#none" class="btn">
+                                                    <a href="#none" class="btn bg_green2">
                                                         이용신청
                                                         <span class="ico"></span>
                                                     </a>
@@ -205,13 +205,28 @@
                         <div class="sec_tit_wp">
                             <div class="h4 fw_2">오시는길</div>
                             <div class="btn_box">
-                                <a href="#none" class="btn">지도 크게보기<span class="ico"></span></a>
-                                <a href="#none" class="btn">길찾기<span class="ico"></span></a>
+                                <a href="#none" class="btn bg_blue_d3">지도 크게보기<span class="ico"></span></a>
+                                <a href="#none" class="btn bg_green2">길찾기<span class="ico"></span></a>
                             </div>
                         </div>
                     </div>
-                    <div class="sec_wp">
-                        <div class="map"></div>
+                    <div class="map_wp mt30">
+                        <div class="map">
+                            <!-- 1. 지도 노드 -->
+                            <div id="daumRoughmapContainer1722912954053" class="root_daum_roughmap root_daum_roughmap_landing" style="width: 100%;"></div>
+
+                            <!--2. 설치 스크립트-->
+                            <script charset="UTF-8" class="daum_roughmap_loader_script" src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
+
+                            <!-- 3. 실행 스크립트 -->
+                            <script charset="UTF-8">
+                                new daum.roughmap.Lander({
+                                    "timestamp" : "1722912954053",
+                                    "key" : "2k9s2",
+                                    "mapHeight" : "500"
+                                }).render();
+                            </script>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -248,19 +263,21 @@
             <!-- // #footer -->
         </div>
         <div class="global_quick">
-            <div class="q_links">
-                <a class="q_link q_link1" href="#none" target="_blank" title="클릭시 새창열림">
+            <div class="q_top">
+                <a class="q_link q_link0" href="main.html">
                     <span class="ico"></span>
-                    <span class="txt">하니움문화스포츠센터</span>
-                </a>
-                <a class="q_link q_link2" href="#none" target="_blank" title="클릭시 새창열림">
-                    <span class="ico"></span>
-                    <span class="txt">화순파크골프장</span>
+                    <span class="txt">하니움<br>문화스포츠센터</span>
                 </a>
             </div>
             <!-- // q_top -->
-
             <div class="q_links">
+                <a class="q_link q_link1" href="#none" target="_blank" title="클릭시 새창열림">
+                    <span class="ico"></span>
+                    <span class="txt">능주파크골프</span>
+                </a>
+            </div>
+            <!-- // q_top -->
+            <div class="to_top">
                 <a href="#header" class="top" title="상단으로">TOP <span class="ico"></span></a>
             </div>
             <!-- // loca_nav -->
