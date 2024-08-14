@@ -24,7 +24,6 @@ $(document).ready(function(){
 		  ]	
 	});
 
-	
 	$('.main_v_sd').on('init reInit afterChange', function(event, slick, currentSlide, nextSlide){
 		$('.main_v_sd .item').removeClass('active');
 		$('.main_v_sd .slick-current .item').addClass('active');
@@ -56,137 +55,43 @@ $(document).ready(function(){
 		$(this).siblings('.slick-stop').css('display','none');
 	});
 
-// -------------------------- 메인 탭 --------------------------
-	$('.board_tabs > li > a.tablink').on('focus click' ,function(){
-		$(this).addClass('active');		
-		$(this).parent('li').addClass('active');		
+
+
+// -------------------------- 메인 주요사업 --------------------------
+	$(".main_major_item > li > a").on('focus click' ,function(){		
+		$(this).parent('li').addClass('active');	
 		$(this).parent('li').siblings('li').removeClass('active');
-		$(this).parent('li').siblings('li').find('a').removeClass('active');		
-		$(this).parent('li').find('div').css('display','block');
-		$(this).parent('li').siblings('li').find('div').css('display','none');
-		$(this).parent('li').find('a.more').css('display','block');
-		$(this).parent('li').siblings('li').find('a.more').css('display','none');
 	});
 
-// -------------------------- 전체메뉴 클릭시 html --------------------------
-	$(".open_all_nav").click(function(){
-		$('html').addClass("active");
-	});
-	$(".close_all_nav").click(function(){
-		$('html').removeClass("active");
-	});
-
-
-
-
-
-// -------------------------- 접근성 레이어팝업 --------------------------
-	if (typeof jQuery === "undefined") throw new Error("Modal requires jQuery.");
-	$(".open-lp").on("click", function() {
-		var op = $(this);
-		var lp = $("#" + $(this).attr("aria-controls"));
-		var lpObj = lp.children(".layer_flex");
-		var lpObjClose = lp.find(".layer_pop_close");
-		var lpObjTabbable = lpObj.find("button, input:not([type='hidden']), select, iframe, textarea, [href], [tabindex]:not([tabindex='-1'])");
-		var lpObjTabbableFirst = lpObjTabbable && lpObjTabbable.first();
-		var lpObjTabbableLast = lpObjTabbable && lpObjTabbable.last();
-		var lpOuterObjHidden = $(".layer_con"); // 레이어 바깥 영역의 요소
-		var all = $(".layer_con").add(lp);
-		var tabDisable;
-		var nowScrollPos = $(window).scrollTop();
-
-		$("body").css("top", - nowScrollPos).addClass("scroll-off").on("scroll touchmove mousewheel", function(event){
-			event.preventDefault();
-			event.stopPropagation();
-			return false;
-		});
-
-		function lpClose() { // 레이어 닫기 함수
-			$("body").removeClass("scroll-off").css("top", "").off("scroll touchmove mousewheel");
-			$(window).scrollTop(nowScrollPos); // 레이어 닫은 후 화면 최상단으로 이동 방지
-			if (tabDisable === true) lpObj.attr("tabindex", "-1");
-			all.removeClass("on");
-			lpOuterObjHidden.removeAttr("aria-hidden");
-			op.focus(); // 레이어 닫은 후 원래 있던 곳으로 초점 이동
-			$(document).off("keydown.lp_keydown");
-		}
-
-		$(this).blur();
-		all.addClass("on");        
-		lpOuterObjHidden.attr("aria-hidden", "true"); // 레이어 바깥 영역을 스크린리더가 읽지 않게
-		lpObjTabbable.length ? lpObjTabbableFirst.focus().on("keydown", function(event) { 
-			// 레이어 열리자마자 초점 받을 수 있는 첫번째 요소로 초점 이동
-			if (event.shiftKey && (event.keyCode || event.which) === 9) {
-				// Shift + Tab키 : 초점 받을 수 있는 첫번째 요소에서 마지막 요소로 초점 이동
-				event.preventDefault();
-				lpObjTabbableLast.focus();
-			}
-		}) : lpObj.attr("tabindex", "0").focus().on("keydown", function(event){
-			tabDisable = true;
-			if ((event.keyCode || event.which) === 9) event.preventDefault();
-			// Tab키 / Shift + Tab키 : 초점 받을 수 있는 요소가 없을 경우 레이어 밖으로 초점 이동 안되게
-		});
-
-		lpObjTabbableLast.on("keydown", function(event) {
-			if (!event.shiftKey && (event.keyCode || event.which) === 9) {
-				// Tab키 : 초점 받을 수 있는 마지막 요소에서 첫번째 요소으로 초점 이동
-				event.preventDefault();
-				lpObjTabbableFirst.focus();
-			}
-		});
-	  
-		lpObjClose.on("click", lpClose); // 닫기 버튼 클릭 시 레이어 닫기
-
-		lp.on("click", function(event){
-			if (event.target === event.currentTarget) {
-				// 반투명 배경 클릭 시 레이어 닫기
-				lpClose();
-			}
-		});
-		
-		$(document).on("keydown.lp_keydown", function(event) {
-			// Esc키 : 레이어 닫기
-			var keyType = event.keyCode || event.which;
-		  
-			if (keyType === 27 && lp.hasClass("on")) {
-			  lpClose();
-			}
-		});
+// -------------------------- 아코디언 --------------------------
+	$(".accordion_btn > a, .all_nav_flod").click(function(){
+		$(this).toggleClass("on");
+		$(this).parent().parent().children(".accordion_con").stop().slideToggle();
+		$(this).parent().siblings().children(".accordion_con").stop().slideUp();
 	});
 
-// -------------------------- Gnb 3차메뉴 오버 --------------------------
-	$(".dep3_on").click(function(){
-		$(".dep3_on").removeClass("on");
-		$(".gnb_dep2 li").removeClass("on");
-		$('.gnb_dep1 > li').removeClass("active");
-		var gnbDepth = $(this).parent().siblings("ul").css("display");
-		if( gnbDepth == "block" ) {
-			$(this).parent().siblings("ul").slideUp(300);
-		} else {
-			$(this).addClass("on");
-			$(this).parent().parent().parent().parent("li").addClass("active");
-			$(".gnb_dep3").slideUp(300);
-			$(this).parent().siblings("ul").slideDown(300);
-		}
-	});
-	
 
 // -------------------------- mGnb 메뉴 열기닫기  --------------------------
 
 	$("#mMenu").click(function(){
 		$("#mGnb").css("display","block");
-		$("#mGnb").animate({right: 0}, 300);			
-		$(".mDepth1 > li:first-child > .mDepth2").css("display","block");
+		$("#mGnb").animate({right: 0}, 300);
+		$("#dimed").fadeIn(300);
 	});
-
 	
 	$(".mDepth1 > li > a").click(function(){
-		$(this).addClass("active");
-		$(this).parent().siblings().children("a").removeClass("active");
-		$(this).parent().children("ul").stop().slideDown();
-		$(this).parent().siblings().children("ul").stop().slideUp();
+		$(".mDepth1 > li > a").removeClass("active");
+		$(".mDepth2 li").removeClass("active");
+		var mDepth2 = $(this).siblings("ul").css("display");
+		if( mDepth2 == "block" ) {
+			$(this).siblings("ul").slideUp(300);
+		} else {
+			$(this).addClass("active");
+			$(".mDepth2").slideUp(300);
+			$(this).siblings("ul").slideDown(300);
+		}
 	});
-	//mGnb menu
+	/*mGnb menu*/
 	$(".mDepth2 > li > a").click(function(){
 		$(".mDepth2 > li > a").removeClass("active");
 		$(".mDepth3 li").removeClass("active");
@@ -217,25 +122,6 @@ $(document).ready(function(){
 		$(this).parent().siblings().children("ul").stop().slideUp();
 	});
 
-
-
-//  -------------------------- [서브] 컨텐츠탭 --------------------------
-	//페이지로딩시
-	$(".pg_tabcon").hide(); // 전체 콘텐츠 감추기
-	$("ul.pg_tab li:first").addClass("on").show(); 
-	$(".pg_tabcon:first").show(); //첫번째 컨텐츠만 보이기
-
-	//클릭시
-	$("ul.pg_tab li").click(function() {
-
-		$("ul.pg_tab li").removeClass("on"); //전체 클래스 on 
-		$(this).addClass("on"); //클릭 tab에 on 추가
-		$(".pg_tabcon").hide(); //콘텐츠 감추기
-
-		var activeTab = $(this).find("a").attr("href"); 
-		$(activeTab).fadeIn(); //ID 일치하는 콘텐츠 펼치기
-		return false;
-	});
 
 // -------------------------- gotop top bottom --------------------------
 
@@ -288,6 +174,47 @@ $(document).ready(function(){
 		}
 	  });
 
+// -------------------------- 예약 달력 --------------------------
+	$(".time_tab > li > a").click(function(){
+		$(this).addClass("active");
+		$(this).parent().siblings().children("a").removeClass("active");
+	})
+
+	$(".wk_01 .able").click(function(){
+		$(".tg_01").addClass("open");
+		$(".tg_02").removeClass("open");
+		$(".tg_03").removeClass("open");
+		$(".tg_04").removeClass("open");
+		$(".tg_05").removeClass("open");
+	})
+	$(".wk_02 .able").click(function(){
+		$(".tg_02").addClass("open");
+		$(".tg_01").removeClass("open");
+		$(".tg_03").removeClass("open");
+		$(".tg_04").removeClass("open");
+		$(".tg_05").removeClass("open");
+	})
+	$(".wk_03 .able").click(function(){
+		$(".tg_03").addClass("open");
+		$(".tg_01").removeClass("open");
+		$(".tg_02").removeClass("open");
+		$(".tg_04").removeClass("open");
+		$(".tg_05").removeClass("open");
+	})
+	$(".wk_04 .able").click(function(){
+		$(".tg_04").addClass("open");
+		$(".tg_01").removeClass("open");
+		$(".tg_02").removeClass("open");
+		$(".tg_03").removeClass("open");
+		$(".tg_05").removeClass("open");
+	})
+	$(".wk_05 .able").click(function(){
+		$(".tg_05").addClass("open");
+		$(".tg_01").removeClass("open");
+		$(".tg_02").removeClass("open");
+		$(".tg_03").removeClass("open");
+		$(".tg_04").removeClass("open");
+	})
 });
 
 
@@ -297,6 +224,7 @@ function mGnbClose() {
 	$("#mGnb").fadeOut(300);
 	$(".mDepth2 > li > a").removeClass("active");
 	$(".mDepth3").slideUp(300);
+	$("#dimed").slideUp(300);
 }
 
 //  -------------------------- mGnb display --------------------------
@@ -327,6 +255,59 @@ function choiceFocus(arrId){
 	window.scrollTo({top:div_location + 350, behavior:'smooth'});
 }
 
+
+
+//  -------------------------- gnb  --------------------------
+
+function web_menu(a){
+	var gnbarea = $('#header');
+	var lnb = $('#gnb'),
+	depth1 = $(".gnb_dep1");
+	depth1.find(" > li > ul").addClass('top2m');
+	depth1.find(" > li").each(function(){
+		var Index = $(this).index()+1;
+		$(this).addClass('mn'+Index);
+	});
+	mask = $( '.tmnBg' );
+
+	var depth2 = $('.gnb_dep2'),
+		lnbLeave = $(".sitem_map,.ico_search");
+
+	depth2.hide();
+	depth1.find(" > li > a").off();
+
+	
+	var dep1_length = depth1.find(" > li").size();
+	for (i=1;i <= dep1_length;i++) {
+		depth1.find("> li:nth-child("+i+") .top2m").addClass('m'+i);
+	}
+
+	depth1.find(" > li > a").on('mouseenter focusin',function(event){
+		event.preventDefault ();		
+		mask.stop().slideDown('1000');
+		$('.top2m').stop().delay('200').slideDown('1000');
+		gnbarea.addClass('on');
+		depth1.addClass('on');		
+	});
+
+	depth1.mouseleave(function(){
+		mask.stop().delay('200').slideUp('1000');
+		depth2.stop().slideUp('1000');
+		depth1.removeClass('on');
+		gnbarea.removeClass('on');
+	});
+	$('.depth1').on('mouseleave',function(){
+	 	$(this).find('.top2m').stop().slideUp('1000');
+		mask.stop().delay('200').slideUp('1000');
+	});
+	
+	lnbLeave.focusin(function(){
+		mask.stop().delay('200').slideUp('1000');
+		depth2.stop().slideUp('1000');
+		depth1.removeClass('on');
+	});
+
+};
 $(function () {
 	$(window).on({
 		load: function () {
@@ -336,8 +317,8 @@ $(function () {
 		}
 	});
 });
-// -------------------------- 화면확대축소 --------------------------
 
+// -------------------------- 화면확대축소 --------------------------
 $(function(){
 
 	var zoom = 1;
@@ -365,3 +346,16 @@ $(function(){
 	});
 });	
 
+
+// fixed header(pc)
+$(window).scroll(function() {
+	if($(window).width() > 300) {
+		var scroll = $(window).scrollTop();
+		if (scroll >= 70) {
+			$("#header").addClass("fixed");			
+
+		} else {
+			$("#header").removeClass("fixed");	
+		}
+	}
+});
